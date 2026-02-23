@@ -6,9 +6,7 @@ warn.filterwarnings('ignore')
 from dotenv import load_dotenv
 load_dotenv()
 ## Langsmith Tracking
-os.environ["LANGCHAIN_API_KEY"]=st.secrets["LANGCHAIN_API_KEY"]
-os.environ["LANGCHAIN_TRACING_V2"]="true"
-os.environ["LANGCHAIN_PROJECT"]="default"
+
 
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
