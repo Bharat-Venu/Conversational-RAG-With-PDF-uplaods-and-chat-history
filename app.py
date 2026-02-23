@@ -32,7 +32,7 @@ st.write("Upload Pdf's and chat with their content")
 
 
 ## Input the Groq API Key
-api_key=st.secrets["GRQ_API_KEY"]
+api_key=st.secrets["GROQ_API_KEY"]
 
 ## Check if groq api key is provided
 if api_key:
