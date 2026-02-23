@@ -6,7 +6,7 @@ warn.filterwarnings('ignore')
 from dotenv import load_dotenv
 load_dotenv()
 ## Langsmith Tracking
-os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_API_KEY"]=st.secrets["LANGCHAIN_API_KEY"]
 os.environ["LANGCHAIN_TRACING_V2"]="true"
 os.environ["LANGCHAIN_PROJECT"]="default"
 
@@ -24,7 +24,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 
 
-os.environ['HF_TOKEN']=os.getenv("HF_TOKEN")
+os.environ['HF_TOKEN']=st.secrets["HF_TOKEN"]
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 
@@ -36,6 +36,7 @@ st.secrets["HF_TOKEN"]
 
 ## Input the Groq API Key
 api_key=st.text_input("Enter your Groq API key:",type="password")
+api_key=st.secrets["GRQ_API_KEY"]
 
 ## Check if groq api key is provided
 if api_key:
